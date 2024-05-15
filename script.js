@@ -89,7 +89,11 @@ function loadingAnimation() {
     })
 }
 loadingAnimation();
-
+function miniSlider() {
+    var copy = document.querySelector(".brands-slide").cloneNode(true);
+    document.querySelector(".brands").appendChild(copy);
+}
+miniSlider();
 function cursorAnimation() {
     document.addEventListener("mousemove", function (dets) {
         gsap.to("#cursor", {

@@ -52,13 +52,18 @@ body {
     font-weight: 600;
     font-size: 14px;
     margin: 0px 20px;
+    background-color: #f7f7f7;
     text-transform: uppercase;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 #icons {
     padding: 10px;
     border-radius: 50px;
     background-color: #f7f7f7;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
 }
 
 #nav-part2 #icons i {
@@ -430,6 +435,57 @@ html {
     color: #2b2d42;
 }
 
+.brands {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.brands:before,
+.brands:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.brands:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #f7f7f7);
+}
+
+.brands:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #f7f7f7);
+}
+
+.brands:hover .brands-slide {
+    animation-play-state: paused;
+}
+
+.brands-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+.brands-slide img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 #page7 {
     display: flex;
     min-height: 20vh;
@@ -717,6 +773,11 @@ html {
 
     #page6 .social-media {
         margin-bottom: 41px;
+    }
+
+    .brands-slide img {
+        height: 30px;
+        margin: 0 40px;
     }
 
     #page7 {
